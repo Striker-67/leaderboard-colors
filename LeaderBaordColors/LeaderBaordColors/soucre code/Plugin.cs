@@ -118,6 +118,16 @@ namespace Mod3
 
                 LoadBoard("RotatingPermanentEntrance/UI (1)/RotatingScoreboard/RotatingScoreboardAnchor/GorillaScoreBoard", true, new Vector3(-22.1964f, -33.7126f, 0.1f), new Vector3(270.056f, 0f, 0f), new Vector3(21.2f, 2f, 21.6f));
             }
+            if (scene.name == "MonkeBlocks")
+            {
+
+                LoadBoard("Environment Objects/MonkeBlocksRoomPersistent/AtticScoreBoard/AtticScoreboardAnchor/GorillaScoreBoard", true, new Vector3(-22.1964f, -24.5091f, 0.57f), new Vector3(270.1856f, 0.1f, 0f), new Vector3(21.6f, 1.2f, 20.8f));
+            }
+            if (scene.name == "Basement")
+            {
+
+                LoadBoard("Basement/BasementScoreboardAnchor/GorillaScoreBoard/", true, new Vector3(-22.1964f, -24.5091f, 0.57f), new Vector3(270.1856f, 0.1f, 0f), new Vector3(21.6f, 1.2f, 20.8f));
+            }
 
 
 
