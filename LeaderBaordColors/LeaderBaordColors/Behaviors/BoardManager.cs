@@ -42,29 +42,100 @@ namespace LeaderBaordColors.Behaviors
             board.transform.localScale = overridePos ? scale : new Vector3(21.2f, 2f, 21.6f);
             boards.Add(board);
         }
-
+        
         public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            if (scene.name == "Canyon2")
-                LoadBoard("Canyon/CanyonScoreboardAnchor/GorillaScoreBoard", true, new Vector3(-24.5019f, -28.7746f, 0.1f), new Vector3(270f, 0f, 0f), new Vector3(21.5946f, 1f, 22.1782f));
-            if (scene.name == "Skyjungle")
-                LoadBoard("skyjungle/UI/Scoreboard/GorillaScoreBoard", true, new Vector3(-21.2764f, -32.1928f, 0f), new Vector3(270.2987f, 0.2f, 359.9f), new Vector3(21.6f, 0.1f, 20.4909f));
-            if (scene.name == "Mountain")
-                LoadBoard("Mountain/MountainScoreboardAnchor/GorillaScoreBoard", false, Vector3.zero, Vector3.zero, Vector3.one);
-            if (scene.name == "Metropolis")
-                LoadBoard("MetroMain/ComputerArea/Scoreboard/GorillaScoreBoard", true, new Vector3(-25.1f, -31f, 0.1502f), new Vector3(270.1958f, 0.2086f, 0f), new Vector3(21f, 102.9727f, 21.4f));
-            if (scene.name == "Bayou")
-                LoadBoard("BayouMain/ComputerArea/GorillaScoreBoardPhysical", true, new Vector3(-28.3419f, -26.851f, 0.3f), new Vector3(270f, 0f, 0f), new Vector3(21.3636f, 38f, 21f));
-            if (scene.name == "Beach")
-                LoadBoard("BeachScoreboardAnchor/GorillaScoreBoard", true, new Vector3(-22.1964f, -33.7126f, 0.1f), new Vector3(270.056f, 0f, 0f), new Vector3(21.2f, 2f, 21.6f));
-            if (scene.name == "Cave")
-                LoadBoard("Cave_Main_Prefab/CrystalCaveScoreboardAnchor/GorillaScoreBoard", true, new Vector3(-22.1964f, -33.7126f, 0.1f), new Vector3(270.056f, 0f, 0f), new Vector3(21.2f, 2f, 21.6f));
-            if (scene.name == "Rotating")
-                LoadBoard("RotatingPermanentEntrance/UI (1)/RotatingScoreboard/RotatingScoreboardAnchor/GorillaScoreBoard", true, new Vector3(-22.1964f, -33.7126f, 0.1f), new Vector3(270.056f, 0f, 0f), new Vector3(21.2f, 2f, 21.6f));
-            if (scene.name == "MonkeBlocks")
-                LoadBoard("Environment Objects/MonkeBlocksRoomPersistent/AtticScoreBoard/AtticScoreboardAnchor/GorillaScoreBoard", true, new Vector3(-22.1964f, -24.5091f, 0.57f), new Vector3(270.1856f, 0.1f, 0f), new Vector3(21.6f, 1.2f, 20.8f));
-            if (scene.name == "Basement")
-                LoadBoard("Basement/BasementScoreboardAnchor/GorillaScoreBoard/", true, new Vector3(-22.1964f, -24.5091f, 0.57f), new Vector3(270.1856f, 0.1f, 0f), new Vector3(21.6f, 1.2f, 20.8f));
+            Vector3 pos, rot, scale;
+            string path;
+            bool modify;
+
+            switch (scene.name)
+            {
+                case "Canyon2":
+                    path = "Canyon/CanyonScoreboardAnchor/GorillaScoreBoard";
+                    pos = new Vector3(-24.5019f, -28.7746f, 0.1f);
+                    rot = new Vector3(270f, 0f, 0f);
+                    scale = new Vector3(21.5946f, 1f, 22.1782f);
+                    modify = true;
+                    break;
+
+                case "Skyjungle":
+                    path = "skyjungle/UI/Scoreboard/GorillaScoreBoard";
+                    pos = new Vector3(-21.2764f, -32.1928f, 0f);
+                    rot = new Vector3(270.2987f, 0.2f, 359.9f);
+                    scale = new Vector3(21.6f, 0.1f, 20.4909f);
+                    modify = true;
+                    break;
+
+                case "Mountain":
+                    path = "Mountain/MountainScoreboardAnchor/GorillaScoreBoard";
+                    pos = Vector3.zero;
+                    rot = Vector3.zero;
+                    scale = Vector3.one;
+                    modify = false;
+                    break;
+
+                case "Metropolis":
+                    path = "MetroMain/ComputerArea/Scoreboard/GorillaScoreBoard";
+                    pos = new Vector3(-25.1f, -31f, 0.1502f);
+                    rot = new Vector3(270.1958f, 0.2086f, 0f);
+                    scale = new Vector3(21f, 102.9727f, 21.4f);
+                    modify = true;
+                    break;
+
+                case "Bayou":
+                    path = "BayouMain/ComputerArea/GorillaScoreBoardPhysical";
+                    pos = new Vector3(-28.3419f, -26.851f, 0.3f);
+                    rot = new Vector3(270f, 0f, 0f);
+                    scale = new Vector3(21.3636f, 38f, 21f);
+                    modify = true;
+                    break;
+
+                case "Beach":
+                    path = "BeachScoreboardAnchor/GorillaScoreBoard";
+                    pos = new Vector3(-22.1964f, -33.7126f, 0.1f);
+                    rot = new Vector3(270.056f, 0f, 0f);
+                    scale = new Vector3(21.2f, 2f, 21.6f);
+                    modify = true;
+                    break;
+
+                case "Cave":
+                    path = "Cave_Main_Prefab/CrystalCaveScoreboardAnchor/GorillaScoreBoard";
+                    pos = new Vector3(-22.1964f, -33.7126f, 0.1f);
+                    rot = new Vector3(270.056f, 0f, 0f);
+                    scale = new Vector3(21.2f, 2f, 21.6f);
+                    modify = true;
+                    break;
+
+                case "Rotating":
+                    path = "RotatingPermanentEntrance/UI (1)/RotatingScoreboard/RotatingScoreboardAnchor/GorillaScoreBoard";
+                    pos = new Vector3(-22.1964f, -33.7126f, 0.1f);
+                    rot = new Vector3(270.056f, 0f, 0f);
+                    scale = new Vector3(21.2f, 2f, 21.6f);
+                    modify = true;
+                    break;
+
+                case "MonkeBlocks":
+                    path = "Environment Objects/MonkeBlocksRoomPersistent/AtticScoreBoard/AtticScoreboardAnchor/GorillaScoreBoard";
+                    pos = new Vector3(-22.1964f, -24.5091f, 0.57f);
+                    rot = new Vector3(270.1856f, 0.1f, 0f);
+                    scale = new Vector3(21.6f, 1.2f, 20.8f);
+                    modify = true;
+                    break;
+
+                case "Basement":
+                    path = "Basement/BasementScoreboardAnchor/GorillaScoreBoard/";
+                    pos = new Vector3(-22.1964f, -24.5091f, 0.57f);
+                    rot = new Vector3(270.1856f, 0.1f, 0f);
+                    scale = new Vector3(21.6f, 1.2f, 20.8f);
+                    modify = true;
+                    break;
+
+                default:
+                    return;
+            }
+
+            LoadBoard(path, modify, pos, rot, scale);
         }
     }
 }
